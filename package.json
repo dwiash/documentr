@@ -4,9 +4,9 @@
   "description": "Parse Markdown files into a pretty HTML format.",
   "version": "0.0.1",
   "repository": {
-    "url": ""
+    "url": "git@github.com:intuiticode/documentr.git"
   },
-  "main": "./lib/main",
+  "main": "./lib/documentr",
   "bin": {
     "documentr": "./bin/documentr"
   },
@@ -19,5 +19,11 @@
   "optionalDependencies": {},
   "engines": {
     "node": "*"
-  }
+  },
+  "keywords": [
+    "markdown",
+    "documentation",
+    "generator"
+  ],
+  "license": "MIT"
 }
