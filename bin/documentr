@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+var path    = require('path'),
+    fs      = require('fs'),
+    libdir  = path.join(path.dirname(fs.realpathSync(__filename)), '../lib'),
+    _       = require('underscore')._;
+    doc     = require( path.join(libdir + '/documentr.js') );
+
+// default options
+var opt = {
+    title:          "Document Name",
+    markdownDir:    "markdown",
+    targetDir:      "out",
+    assetsDir:      path.normalize( path.join(libdir, 'template/assets') ),
+    template:       path.normalize( path.join(libdir, 'template/index.tpl') )
+};
+
+// import config.js if exist
+// and load its options
+if(fs.existsSync('config.js')){
+    var config = require('./config.js');
+    _.extend(options, config);
+}
+
+doc(opt.title, opt.markdownDir, opt.targetDir, opt.assetsDir, opt.template);
