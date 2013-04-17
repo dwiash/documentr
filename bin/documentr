@@ -16,9 +16,9 @@ var opt = {
 
 // import config.js if exist
 // and load its options
-if(fs.existsSync('config.js')){
-    var config = require('./config.js');
-    _.extend(options, config);
+if(fs.existsSync('config.json')){
+    var config = JSON.parse(fs.readFileSync('./config.json'));
+    _.extend(opt, config);
 }
 
 doc(opt.title, opt.markdownDir, opt.targetDir, opt.assetsDir, opt.template);
